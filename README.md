@@ -1,4 +1,4 @@
-# medes-ui-components
+# Mediadesain UI Components
 
 <p align="center">
   <a href="https://doc.mediadesain.com/">
