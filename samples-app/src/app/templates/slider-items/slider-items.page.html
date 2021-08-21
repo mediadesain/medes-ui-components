@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/templates"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Image Slider</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!------------ Image Slider ------------>
+  <div class="ion-padding">
+    <select [(ngModel)]="sliderStyle">
+      <option>slider-style-landscape</option>
+      <option>slider-style-portrait</option>
+      <option>slider-style-square</option>
+      <option>slider-style-circle</option>
+    </select>
+    <select [(ngModel)]="sliderSize">
+      <option>slider-size-1</option>
+      <option>slider-size-2</option>
+      <option>slider-size-3</option>
+      <option>slider-size-4</option>
+      <option>slider-size-5</option>
+      <option>slider-size-6</option>
+      <option>slider-size-7</option>
+      <option>slider-size-8</option>
+    </select>
+    <select *ngIf="sliderStyle != 'slider-style-circle'" [(ngModel)]="sliderRadius">
+      <option value="">unset</option>
+      <option>mds-radius-1</option>
+      <option>mds-radius-2</option>
+      <option>mds-radius-3</option>
+      <option>mds-radius-4</option>
+    </select>
+  </div>
+  
+  <div class="mds-img-slider" [ngClass]="sliderStyle+' '+ sliderSize +' '+ sliderRadius">
+    <!-- sliderSize : [slider-size-1, ..., slider-size-8]-->
+    <!-- sliderStyle : [slider-style-*, [landscape, portrait,square,circle] ]-->
+    <!-- sliderRadius : [mds-radius-1, ..., slider-size-4]-->
+    <div class="slide-title">
+      <h3>Title</h3>
+      <a href="">View All</a>
+    </div>
+    <ul class="slides">
+      <li><div class="mds-img-loader"><img src="../../../assets/images/course/1.jpg"/></div></li>
+      <li><div class="mds-img-loader"><img src="../../../assets/images/course/2.jpg"/></div></li>
+      <li><div class="mds-img-loader"><img src="../../../assets/images/course/3.jpg"/></div></li>
+      <li><div class="mds-img-loader"><img src="../../../assets/images/course/4.jpg"/></div></li>
+      <li><div class="mds-img-loader"><img src="../../../assets/images/course/5.jpg"/></div></li>
+    </ul>
+  </div>
+</ion-content>

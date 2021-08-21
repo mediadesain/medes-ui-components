@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/templates"></ion-back-button>
+    </ion-buttons>
+    <ion-title>List Items</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding">
+    <select [(ngModel)]="itemRadius">
+      <option value="">unset</option>
+      <option>mds-radius-1</option>
+      <option>mds-radius-2</option>
+      <option>mds-radius-3</option>
+      <option>mds-radius-4</option>
+    </select>
+    <select [(ngModel)]="imgShape" (change)="changeImgLoader(imgShape)">
+      <option>square</option>
+      <option>circle</option>
+    </select>
+    <select *ngIf="imgShape !== 'circle'" [(ngModel)]="imgRadius">
+      <option value="">unset</option>
+      <option>mds-radius-1</option>
+      <option>mds-radius-2</option>
+      <option>mds-radius-3</option>
+      <option>mds-radius-4</option>
+    </select>
+  </div>
+  <ion-list class="mds-list-card {{itemRadius}} mds-shadow" lines="none">
+    <ion-item *ngFor="let a of [0,1,2,3,4]" [routerLink]="'/project-detail'" button detail>
+      <ion-thumbnail slot="start">
+        <div class="mds-img-loader {{imgShape}} {{imgRadius}}"><img src="../../../../assets/images/placeholder/project.png"></div>
+      </ion-thumbnail>
+      <ion-label>
+        <h3>Edit Video Online Class {{a}}</h3>
+        <small><i>Antara 1mio - 1.5mio</i></small>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

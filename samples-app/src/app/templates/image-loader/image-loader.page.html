@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/templates"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Image Loader</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<!------------ Image Loader ------------>
+  <div class="ion-padding">
+    <select [(ngModel)]="imgLoaderStyle" (change)="changeImgLoader(imgLoaderStyle)">
+      <option>landscape</option>
+      <option>portrait</option>
+      <option>square</option>
+      <option>circle</option>
+    </select>
+    <select *ngIf="imgLoaderStyle !== 'circle'" [(ngModel)]="imgLoaderBorder">
+      <option value="">unset</option>
+      <option> mds-radius-1</option>
+      <option> mds-radius-2</option>
+      <option> mds-radius-3</option>
+      <option> mds-radius-4</option>
+    </select>
+  </div>
+  <div style="max-width: 250px;margin:0 auto">
+    <div class="mds-img-loader" ngClass="{{imgLoaderStyle}} {{imgLoaderBorder}}"><img src="../../../../assets/images/course/3.jpg"/></div>
+  </div>
+
+<small class="ion-padding">
+<pre>
+  &lt;div class=&quot;mds-img-loader {{imgLoaderStyle}}<span *ngIf="imgLoaderBorder">{{' '+imgLoaderBorder}}</span>&quot;&gt;
+    &lt;img src=&quot;...&quot;/&gt;
+  &lt;/div&gt;
+</pre>
+</small>
+
+  <div class="grid">
+    <div>
+      <p>Landscape</p>
+      <div class="mds-img-loader landscape"><img src="../../../../assets/images/course/3.jpg"/></div>
+      <div class="mds-img-loader landscape"><img src=""/></div>
+    </div>
+    <div>
+      <p>Portrait</p>
+      <div class="mds-img-loader portrait"><img src="../../../../assets/images/course/3.jpg"/></div>
+      <div class="mds-img-loader portrait"><img src=""/></div>
+    </div>
+    <div>
+      <p>Square</p>
+      <div class="mds-img-loader square"><img src="../../../../assets/images/course/3.jpg"/></div>
+      <div class="mds-img-loader square"><img src=""/></div>
+    </div>
+    <div>
+      <p>Circle</p>
+      <div class="mds-img-loader circle"><img src="../../../../assets/images/course/3.jpg"/></div>
+      <div class="mds-img-loader circle"><img src=""/></div>
+    </div>
+  </div>
+</ion-content>

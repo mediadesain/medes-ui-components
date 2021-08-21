@@ -1,0 +1,127 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/templates"></ion-back-button>
+    </ion-buttons>
+    <ion-title>MDS UI Components</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <br/>
+
+  <div class="ion-padding">
+    <select [(ngModel)]="iconStyle">
+      <option>icon-size-1</option>
+      <option>icon-size-2</option>
+      <option>icon-size-3</option>
+      <option>icon-size-4</option>
+      <option>icon-size-5</option>
+    </select>
+    <select [(ngModel)]="checkedStyle">
+      <option>icon-checked-mark</option>
+      <option>icon-checked-marktext</option>
+    </select>
+  </div>
+  <div class="mds-slider-icon {{iconStyle}} {{checkedStyle}}">
+    <div class="slide-title">
+      <h3>Multiple Selection</h3>
+      <a href="">View All</a>
+    </div>
+    <ul class="slides">
+      <li *ngFor="let a of icons;let i = index">
+          <input type="checkbox" name="mycheckbox" [id]="'checkbox'+i" [value]="a.value">
+          <label [for]="'checkbox'+i">
+            <img [src]="a.img"/>
+            <small>{{a.value|titlecase}}</small>
+          </label>
+      </li>
+    </ul>
+  </div>
+
+  <div class="mds-slider-icon {{iconStyle}} {{checkedStyle}}">
+    <div class="slide-title">
+      <h3>Single Selection</h3>
+      <a href="">View All</a>
+    </div>
+    <ul class="slides">
+      <li *ngFor="let a of icons;let i = index">
+          <input type="radio" name="myradio" [id]="'radio'+i" [value]="a.value" [(ngModel)]="radiofix">
+          <label [for]="'radio'+i">
+            <img [src]="a.img"/>
+            <small>{{a.value|titlecase}}</small>
+          </label>
+      </li>
+    </ul>
+  </div>
+  
+<style>
+  .custom li {background-color: yellowgreen;}
+</style>
+  <!-- <ul class="mds-icon-slide icon-size-2" list-selected="highlight-text" list-effect="scale">
+    <li>
+      <input type="radio" id="ex-slide1" name="ex-slide" value="firefox">
+      <label for="ex-slide1"><img src="https://medes-doc.firebaseapp.com//assets/medes/icon-firefox.png"><small>Firefox</small></label>
+    </li>
+    <li>
+      <input type="radio" id="ex-slide2" name="ex-slide" value="chrome" [(ngModel)]="radio">
+      <label for="ex-slide2"><img src="https://medes-doc.firebaseapp.com/assets/medes/icon-chrome.png"><small>Chrome</small></label>
+    </li>
+    <li>
+      <input type="radio" id="ex-slide3" name="ex-slide" value="opera" [(ngModel)]="radio">
+      <label for="ex-slide3"><img src="https://medes-doc.firebaseapp.com/assets/medes/icon-opera.png"><small>Opera</small></label>
+    </li>
+    <li>
+      <input type="radio" id="ex-slide4" name="ex-slide" value="edge" [(ngModel)]="radio">
+      <label for="ex-slide4"><img src="https://medes-doc.firebaseapp.com/assets/medes/icon-edge.png"><small>Edge</small></label>
+    </li>
+    <li>
+      <input type="radio" id="ex-slide5" name="ex-slide" value="facebook" [(ngModel)]="radio">
+      <label for="ex-slide5"><img src="https://medes-doc.firebaseapp.com/assets/medes/icon-facebook.png"><small>Facebook</small></label>
+    </li>
+    <li>
+      <input type="radio" id="ex-slide6" name="ex-slide" value="instagram" [(ngModel)]="radio">
+      <label for="ex-slide6"><img src="https://medes-doc.firebaseapp.com/assets/medes/icon-instagram.png"><small>Instagram</small></label>
+    </li>
+    <li>
+      <input type="radio" id="ex-slide7" name="ex-slide" value="mediadesain" [(ngModel)]="radio">
+      <label for="ex-slide7"><img src="https://medes-doc.firebaseapp.com/assets/medes/icon-mds.png"><small>Mediadesain</small></label>
+    </li>
+    <li>
+      <input type="radio" id="ex-slide8" name="ex-slide" value="html" [(ngModel)]="radio">
+      <label for="ex-slide8"><img src="https://medes-doc.firebaseapp.com/assets/medes/icon-html.png"><small>HTML</small></label>
+    </li>
+    <li>
+      <input type="radio" id="ex-slide9" name="ex-slide" value="css" [(ngModel)]="radio">
+      <label for="ex-slide9"><img src="https://medes-doc.firebaseapp.com/assets/medes/icon-css.png"><small>CSS</small></label>
+    </li>
+    <li>
+      <input type="radio" id="ex-iside40" name="ex-slide" value="js" [(ngModel)]="radio">
+      <label for="ex-iside40"><img src="https://medes-doc.firebaseapp.com/assets/medes/icon-js.png"><small>JavaScript</small></label>
+    </li>
+    <li>
+      <input type="radio" id="ex-iside41" name="ex-slide" value="angularjs" [(ngModel)]="radio">
+      <label for="ex-iside41"><img src="https://medes-doc.firebaseapp.com/assets/medes/icon-angularjs.png"><small>AngularJS</small></label>
+    </li>
+  </ul> -->
+
+  
+
+  <!------------ Custom Slider ------------>
+  <div class="ion-padding">
+    <h3>UI Component - Custom Slider</h3>
+  </div>
+  <style>.custom li {background: yellowgreen;}</style>
+  <div class="mds-slider slider-size-3 custom">
+    <div class="slide-title">
+      <h3>Title</h3>
+      <a href="">View All</a>
+    </div>
+    <ul class="slides ion-text-center">
+      <li><div><div>asd</div><div>ccc</div></div></li>
+      <li><div><div>asd</div><div>ccc</div></div></li>
+      <li><div><div>asd</div><div>ccc</div></div></li>
+      <li><div><div>asd</div><div>ccc</div></div></li>
+      <li><div><div>asd</div><div>ccc</div></div></li>
+    </ul>
+  </div>

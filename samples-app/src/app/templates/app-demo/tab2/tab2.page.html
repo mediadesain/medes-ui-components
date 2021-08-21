@@ -1,0 +1,110 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="primary" style="z-index: 100;">
+    <ion-buttons slot="start">
+      <ion-button><ion-icon name="funnel-outline"></ion-icon></ion-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Belajar</ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon name="search-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar style="box-shadow: 0 0 15px rgb(0 0 0 / 20%);">
+    <ion-segment class="center" scrollable="true" (ionChange)="segmentChanged($event)" [(ngModel)]="segment">
+      <ion-segment-button value="0"><ion-label>Kelas Online</ion-label></ion-segment-button>
+      <ion-segment-button value="1"><ion-label>Kelas Privat</ion-label></ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-slides class="mds-segment-slide" #slides (ionSlideDidChange)="slideChanged()">
+    <ion-slide>
+      <div>
+        <ion-grid>
+          <ion-row>
+            <ion-col size="12" size-md="6">
+              <ion-card>
+                <div class="mds-img-loader landscape"><img src="https://firebasestorage.googleapis.com/v0/b/media-desain.appspot.com/o/classes%2FDGN1603753882000%2Fthumb.jpg?alt=media&amp;token=f37c10b8-c08c-4b07-bc56-ff2033f6cac1"></div>
+                <ion-card-header>
+                  <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+                  <ion-card-title>Card Title</ion-card-title>
+                </ion-card-header>
+                <ion-card-content>Total Materi 1</ion-card-content>
+              </ion-card>
+            </ion-col>
+            <ion-col size="12" size-md="6">
+              <ion-card>
+                <div class="mds-img-loader landscape"><img src="https://firebasestorage.googleapis.com/v0/b/media-desain.appspot.com/o/classes%2FCDE1566270000000%2Fthumb.jpg?alt=media&token=456c0784-84af-49e6-b0fd-2423b5c0c91a"></div>
+                <ion-card-header>
+                  <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+                  <ion-card-title>Card Title</ion-card-title>
+                </ion-card-header>
+                <ion-card-content>Total Materi 1</ion-card-content>
+              </ion-card>
+            </ion-col>
+            <ion-col size="12" size-md="6">
+              <ion-card>
+                <div class="mds-img-loader landscape"><img src="https://firebasestorage.googleapis.com/v0/b/media-desain.appspot.com/o/classes%2FCDE1565406000000%2Fthumb.jpg?alt=media&token=f4da8320-3a86-43c0-b135-dce9257ab273"></div>
+                <ion-card-header>
+                  <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+                  <ion-card-title>Card Title</ion-card-title>
+                </ion-card-header>
+                <ion-card-content>Total Materi 1</ion-card-content>
+              </ion-card>
+            </ion-col>
+            <ion-col size="12" size-md="6">
+              <ion-card>
+                <div class="mds-img-loader landscape"><img src="https://firebasestorage.googleapis.com/v0/b/media-desain.appspot.com/o/classes%2FCDE1565406000000%2Fthumb.jpg?alt=media&token=f4da8320-3a86-43c0-b135-dce9257ab273"></div>
+                <ion-card-header>
+                  <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+                  <ion-card-title>Card Title</ion-card-title>
+                </ion-card-header>
+                <ion-card-content>Total Materi 1</ion-card-content>
+              </ion-card>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <div style="padding: 16px 0">
+        <ion-list class="mds-list-card mds-radius-2 mds-shadow" lines="none">
+          <ion-item button detail>
+            <ion-thumbnail slot="start">
+              <div class="mds-img-loader circle"><img src="../../../../assets/images/placeholder/profile.jpg"></div>
+            </ion-thumbnail>
+            <ion-label>
+              <h3>John Doe</h3>
+              <small>Developer - 80k/jam</small>
+            </ion-label>
+          </ion-item>
+          <ion-item button detail>
+            <ion-thumbnail slot="start">
+              <div class="mds-img-loader circle"><img src="../../../../assets/images/placeholder/profile.jpg"></div>
+            </ion-thumbnail>
+            <ion-label>
+              <h3>John Doe</h3>
+              <small>Developer - 80k/jam</small>
+            </ion-label>
+          </ion-item>
+          <ion-item button detail>
+            <ion-thumbnail slot="start">
+              <div class="mds-img-loader circle"><img src="../../../../assets/images/placeholder/profile.jpg"></div>
+            </ion-thumbnail>
+            <ion-label>
+              <h3>John Doe</h3>
+              <small>Developer - 80k/jam</small>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </div>
+    </ion-slide>
+  </ion-slides>
+
+</ion-content>

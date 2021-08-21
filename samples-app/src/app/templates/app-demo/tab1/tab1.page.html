@@ -1,0 +1,128 @@
+
+<ion-header class="ion-no-border">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <img (click)="navCtrl.navigateBack('/templates')" src="../../../../assets/images/app-elements/logo-bar.png" style="transform: scale(.9); margin-left: 3px;"/>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Beranda</ion-title>
+    <ion-buttons slot="end">
+      <ion-button><ion-icon name="notifications-outline"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="top-element"></div>
+  <div class="bottom-element">
+    <br/>
+    <img src="../../../../assets/images/app-elements/bg.png" class="topbg"/>
+    <ion-refresher style="visibility: hidden;" (ionRefresh)="doRefresh($event)" slot="fixed"><ion-refresher-content></ion-refresher-content></ion-refresher>
+    <div *ngIf="customLoader" class="ion-text-center" style="margin-bottom: 20px;">
+      <ion-spinner name="lines" style="width: 25px;"></ion-spinner>
+    </div>
+
+    <div class="mds-img-slider slider-style-landscape slider-size-8 mds-radius-2"><!--top-overlay-->
+      <ul class="slides">
+        <li><a href="javascript:void(0)"><div class="mds-img-loader"><img src="../../../../assets/images/course/1.jpg"/></div></a></li>
+        <li><a href="javascript:void(0)"><div class="mds-img-loader"><img src="../../../../assets/images/course/2.jpg"/></div></a></li>
+        <li><a href="javascript:void(0)"><div class="mds-img-loader"><img src="../../../../assets/images/course/3.jpg"/></div></a></li>
+        <li><a href="javascript:void(0)"><div class="mds-img-loader"><img src="../../../../assets/images/course/4.jpg"/></div></a></li>
+        <li><a href="javascript:void(0)"><div class="mds-img-loader"><img src="../../../../assets/images/course/5.jpg"/></div></a></li>
+      </ul>
+    </div>
+
+    <div class="mds-slider-icon icon-size-2 icon-checked-marktext">
+      <!-- <div class="slide-title">
+        <h3>Single Selection</h3>
+        <a href="">View All</a>
+      </div> -->
+      <ul class="slides">
+        <li *ngFor="let a of icons;let i = index">
+            <input type="radio" name="myradio" [id]="'radio'+i" [value]="a.value" [(ngModel)]="radiofix">
+            <label [for]="'radio'+i">
+              <img [src]="a.img"/>
+              <small>{{a.value|titlecase}}</small>
+            </label>
+        </li>
+      </ul>
+    </div>
+
+    <div class="mds-img-slider slider-style-circle slider-size-1">
+      <div class="slide-title">
+        <h3>Tutor & Freelancer</h3>
+        <a href="javascript:void(0)">Lihat Semua</a>
+      </div>
+      <ul class="slides">
+        <li><a href="javascript:void(0)"><div class="mds-img-loader"><img src="https://firebasestorage.googleapis.com/v0/b/media-desain.appspot.com/o/users%2FUSRZXSVS1608882068751.jpeg?alt=media&token=51306af9-6d72-43c0-a098-0634417a61de" onError="this.src='../../../../assets/images/placeholder/profile.jpg'"/></div></a></li>
+        <li><a href="javascript:void(0)"><div class="mds-img-loader"><img src="https://firebasestorage.googleapis.com/v0/b/media-desain.appspot.com/o/users%2FUSRSD8XX1610348259555.jpeg?alt=media&token=e502f173-1719-47b0-8787-e4e971bffcbc" onError="this.src='../../../../assets/images/placeholder/profile.jpg'"/></div></a></li>
+        <li><a href="javascript:void(0)"><div class="mds-img-loader"><img src="https://firebasestorage.googleapis.com/v0/b/media-desain.appspot.com/o/users%2FUSRQ5TUM1587178800000.jpg?alt=media&token=5dc7cd1f-d6f3-43bd-8965-4953c3fe9e16" onError="this.src='../../../../assets/images/placeholder/profile.jpg'"/></div></a></li>
+        <li><a href="javascript:void(0)"><div class="mds-img-loader"><img src="https://firebasestorage.googleapis.com/v0/b/media-desain.appspot.com/o/users%2FUSR8JPSY1589079600000.jpeg?alt=media&token=24851444-73f1-4137-896c-1047fdbc85cf" onError="this.src='../../../../assets/images/placeholder/profile.jpg'"/></div></a></li>
+        <li><a href="javascript:void(0)"><div class="mds-img-loader"><img src="https://firebasestorage.googleapis.com/v0/b/media-desain.appspot.com/o/users%2FUSRXXXXX1589079600000.jpg?alt=media&token=05f56a5d-8153-4454-8446-275a738112cd" onError="this.src='../../../../assets/images/placeholder/profile.jpg'"/></div></a></li>
+      </ul>
+    </div>
+
+    <div class="mds-img-slider slider-style-square mds-radius-2 slider-size-2">
+      <div class="slide-title">
+        <h3>Projek</h3>
+        <a href="javascript:void(0)">Lihat Semua</a>
+      </div>
+      <ul class="slides">
+        <li><div class="mds-img-loader"><img src="../../../../assets/images/course/1.jpg"/></div></li>
+        <li><div class="mds-img-loader"><img src="../../../../assets/images/course/2.jpg"/></div></li>
+        <li><div class="mds-img-loader"><img src="../../../../assets/images/course/3.jpg"/></div></li>
+        <li><div class="mds-img-loader"><img src="../../../../assets/images/course/4.jpg"/></div></li>
+        <li><div class="mds-img-loader"><img src="../../../../assets/images/course/5.jpg"/></div></li>
+      </ul>
+    </div>
+    
+    <div class="mds-ion-card-slider slider-size-8 slider-size-md-4">
+      <div class="slide-title">
+        <h3>Kelas Terbaru</h3>
+        <a href="javascript:void(0)">Lihat Semua</a>
+      </div>
+      <ul class="slides">
+        <li>
+          <ion-card>
+            <div class="mds-img-loader landscape"><img src="https://firebasestorage.googleapis.com/v0/b/media-desain.appspot.com/o/classes%2FDGN1603753882000%2Fthumb.jpg?alt=media&amp;token=f37c10b8-c08c-4b07-bc56-ff2033f6cac1"></div>
+            <ion-card-header>
+              <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+              <ion-card-title>Card Title</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>Total Materi 1</ion-card-content>
+          </ion-card>
+        </li>
+        <li>
+          <ion-card>
+            <div class="mds-img-loader landscape"><img src="https://firebasestorage.googleapis.com/v0/b/media-desain.appspot.com/o/classes%2FDGN1603753882000%2Fthumb.jpg?alt=media&amp;token=f37c10b8-c08c-4b07-bc56-ff2033f6cac1"></div>
+            <ion-card-header>
+              <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+              <ion-card-title>Card Title</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>Total Materi 1</ion-card-content>
+          </ion-card>
+        </li>
+        <li>
+          <ion-card>
+            <div class="mds-img-loader landscape"><img src="https://firebasestorage.googleapis.com/v0/b/media-desain.appspot.com/o/classes%2FDGN1603753882000%2Fthumb.jpg?alt=media&amp;token=f37c10b8-c08c-4b07-bc56-ff2033f6cac1"></div>
+            <ion-card-header>
+              <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+              <ion-card-title>Card Title</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>Total Materi 1</ion-card-content>
+          </ion-card>
+        </li>
+        <li>
+          <ion-card>
+            <div class="mds-img-loader landscape"><img src="https://firebasestorage.googleapis.com/v0/b/media-desain.appspot.com/o/classes%2FDGN1603753882000%2Fthumb.jpg?alt=media&amp;token=f37c10b8-c08c-4b07-bc56-ff2033f6cac1"></div>
+            <ion-card-header>
+              <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+              <ion-card-title>Card Title</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>Total Materi 1</ion-card-content>
+          </ion-card>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</ion-content>

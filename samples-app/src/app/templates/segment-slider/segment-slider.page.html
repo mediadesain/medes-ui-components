@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/templates"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Segment Slider</ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-segment class="center" scrollable="true" (ionChange)="segmentChanged($event)" [(ngModel)]="segment">
+      <ion-segment-button value="0"><ion-label>Segment 1</ion-label></ion-segment-button>
+      <ion-segment-button value="1"><ion-label>Segment 2</ion-label></ion-segment-button>
+      <ion-segment-button value="2"><ion-label>Segment 3</ion-label></ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-slides class="mds-segment-slide" #slides (ionSlideDidChange)="slideChanged()">
+    <ion-slide>
+      1
+    </ion-slide>
+    <ion-slide>
+      2
+    </ion-slide>
+    <ion-slide>
+      3
+    </ion-slide>
+  </ion-slides>
+</ion-content>
