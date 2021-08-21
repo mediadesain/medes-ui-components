@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="https://doc.mediadesain.com/">
-    <img src="https://www.mediadesain.com/Public/img/elements/logo.png">
+    <img src="https://raw.githubusercontent.com/mediadesain/medes-ui-components/main/logo.png">
   </a>
 </p>
 
