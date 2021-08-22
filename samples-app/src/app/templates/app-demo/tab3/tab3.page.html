@@ -11,7 +11,7 @@
     </ion-buttons>
   </ion-toolbar>
   <ion-toolbar style="box-shadow: 0 0 15px rgb(0 0 0 / 20%);">
-    <ion-segment class="center" scrollable="true" (ionChange)="segmentChanged($event)" [(ngModel)]="segment">
+    <ion-segment class="center" scrollable="true" (ionChange)="segmentChanged()" [(ngModel)]="segment">
       <ion-segment-button value="0"><ion-label>Project</ion-label></ion-segment-button>
       <ion-segment-button value="1"><ion-label>Freelancer</ion-label></ion-segment-button>
     </ion-segment>

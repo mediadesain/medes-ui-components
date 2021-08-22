@@ -25,10 +25,14 @@ export class Tab1Page {
     { 'value':'javascript', 'img':'https://medes-doc.firebaseapp.com/assets/medes/icon-js.png'},
     { 'value':'angularjs', 'img':'https://medes-doc.firebaseapp.com/assets/medes/icon-angularjs.png'}
   ]
+  customLoader:boolean = false;
+  radiofix:string = ''
   constructor(public navCtrl: NavController) {}
 
   doRefresh(event:any){
+    this.customLoader = true
     setTimeout(() => {
+      this.customLoader = false
       event.target.complete();
     }, 2000);
   }

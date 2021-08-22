@@ -6,7 +6,7 @@
     <ion-title class="ion-text-center">Segment Slider</ion-title>
   </ion-toolbar>
   <ion-toolbar>
-    <ion-segment class="center" scrollable="true" (ionChange)="segmentChanged($event)" [(ngModel)]="segment">
+    <ion-segment class="center" scrollable="true" (ionChange)="segmentChanged()" [(ngModel)]="segment">
       <ion-segment-button value="0"><ion-label>Segment 1</ion-label></ion-segment-button>
       <ion-segment-button value="1"><ion-label>Segment 2</ion-label></ion-segment-button>
       <ion-segment-button value="2"><ion-label>Segment 3</ion-label></ion-segment-button>
