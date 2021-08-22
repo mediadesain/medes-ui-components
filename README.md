@@ -23,7 +23,7 @@ Medes UI Compnents is additional UI components especially for devlopment hybrid 
 - Custom List Item Group style
 - Ion Segment Suport Slider - Template Sample
 - Ion Segment Suport Slider - Template Sample
-Full Medes UI Components applied to this [Demo App](https://medes-ui.web.app/templates)
+Full Medes UI Components applied to this [Demo App](https://medes-ui.web.app/)
 
 ### How to Instal Medes UI Component
 - Open your Ionic Project
