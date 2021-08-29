@@ -6,10 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./slider-items.page.scss'],
 })
 export class SliderItemsPage implements OnInit {
-  sliderStyle:string = 'slider-style-square';
-  sliderSize:string = 'slider-size-2';
-  sliderRadius:string = 'mds-radius-1';
-  
+  sliderStyle = 'slider-style-square';
+  sliderSize = 'slider-size-2';
+  sliderRadius = 'mds-radius-1';
+
   constructor() { }
 
   ngOnInit() {

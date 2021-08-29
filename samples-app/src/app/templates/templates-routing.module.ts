@@ -43,6 +43,10 @@ const routes: Routes = [
   {
     path: 'demo-app',
     loadChildren: () => import('./app-demo/tabs.module').then( m => m.TabsPageModule)
+  },
+  {
+    path: 'sample-infinite-load',
+    loadChildren: () => import('./sample-infinite-load/sample-infinite-load.module').then( m => m.SampleInfiniteLoadPageModule)
   }
 ];
 

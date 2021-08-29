@@ -6,17 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list-items.page.scss'],
 })
 export class ListItemsPage implements OnInit {
-  itemRadius:string = 'mds-radius-2';
-  imgShape:string = 'square';
-  imgRadius:string = 'mds-radius-2';
+  itemRadius = 'mds-radius-2';
+  imgShape = 'square';
+  imgRadius = 'mds-radius-2';
   constructor() { }
 
   ngOnInit() {
   }
 
-  changeImgLoader(val:string){
-    if(val === 'circle')
-      this.imgRadius = ''
+  changeImgLoader(val: string){
+    if (val === 'circle') {
+      this.imgRadius = '';
+    }
   }
 
 }

@@ -7,16 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ImageLoaderPage implements OnInit {
 
-  imgLoaderStyle:string = 'landscape';
-  imgLoaderBorder:string = '';
+  imgLoaderStyle = 'landscape';
+  imgLoaderBorder = '';
   constructor() { }
 
   ngOnInit() {
   }
 
-  changeImgLoader(val:string){
-    if(val === 'circle')
-      this.imgLoaderBorder = ''
+  changeImgLoader(val: string){
+    if (val === 'circle') {
+      this.imgLoaderBorder = '';
+    }
   }
 
 }

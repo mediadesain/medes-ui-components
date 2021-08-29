@@ -6,8 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list-items-group.page.scss'],
 })
 export class ListItemsGroupPage implements OnInit {
-  groupRadius:string = 'mds-radius-2';
-  showShadow:string = 'mds-shadow';
+  groupRadius = 'mds-radius-2';
+  showShadow = 'mds-shadow';
   constructor() { }
 
   ngOnInit() {
