@@ -1,0 +1,26 @@
+body {
+    --ion-color-primary: #8bc53f;
+    --ion-color-primary-rgb: 139,197,63;
+    --ion-color-primary-contrast: #ffffff;
+    --ion-color-primary-contrast-rgb: 255, 255, 255;
+    --ion-color-primary-shade: #7aad37;
+    --ion-color-primary-tint: #97cb52;
+
+    --background-color: #f9f9f9;
+    --background-color-rgb: 249,249,249;
+    --element-color: #ffffff;
+    --element-color-rgb: 255,255,255;
+    --text-color: #666666;
+    --text-color-rgb: 102,102,102;
+}
+
+@media (prefers-color-scheme: dark) {
+    .ios body, .md body{
+        --background-color: #111111;
+        --background-color-rgb: 17,17,17;
+        --element-color: #1c1c1c;
+        --element-color-rgb: 28,28,28;
+        --text-color: #ffffff;
+        --text-color-rgb: 255,255,255;
+    }
+}
