@@ -13,15 +13,15 @@ export class SampleInfiniteLoadPage implements OnInit {
   ) { }
 
   ngOnInit() {
-    if (this.infiniteService.data.length == 0){
-      this.infiniteService.getData()
+    if (this.infiniteService.data.length === 0){
+      this.infiniteService.getData();
     }
   }
 
   loadData(event) {
     setTimeout(() => {
       event.target.complete();
-      this.infiniteService.loadMore()
+      this.infiniteService.loadMore();
     }, 500);
   }
 

@@ -9,10 +9,23 @@
 
 <ion-content>
 
-  <ion-list *ngIf="infiniteService">
+  <!--If Data loading show Skeleton-->
+  <ion-list *ngIf="infiniteService.isloading">
+    <ion-item *ngFor="let a of [0,1,2,3,4,5,6,7,8,9,10]">
+      <ion-thumbnail slot="start">
+        <div class="mds-img-loader square"></div>
+      </ion-thumbnail>
+      <ion-label>
+        <h3><ion-skeleton-text animated style="width: 80%"></ion-skeleton-text></h3>
+        <p><ion-skeleton-text animated></ion-skeleton-text></p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <!--If Data Loaded-->
+  <ion-list *ngIf="!infiniteService.isloading && infiniteService">
     <ion-item *ngFor="let a of infiniteService.data">
       <ion-thumbnail slot="start">
-        <img src="../../../../assets/images/placeholder/profile.jpg">
+        <div class="mds-img-loader square"><img [src]="a.img"></div>
       </ion-thumbnail>
       <ion-label>
         <h3>{{a.firstName +' '+ a.lastName}}</h3>
@@ -21,6 +34,7 @@
     </ion-item>
   </ion-list>
 
+  <!--Infinite scroll-->
   <ion-infinite-scroll *ngIf="infiniteService.showitem.end < infiniteService.alldata.length" threshold="100px" (ionInfinite)="loadData($event)">
     <ion-infinite-scroll-content
       loadingSpinner="bubbles"
